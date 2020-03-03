@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Mark Petherbridge</title>
+    <link>https://markpetherbridge.co.uk/blog/</link>
+    <description>Recent content in Blogs on Mark Petherbridge</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Developing with &lt;i class=&#39;fas fa-heart&#39;&gt;&lt;/i&gt; in Japan</copyright>
+    <lastBuildDate>Mon, 09 Sep 2019 11:13:25 +0900</lastBuildDate>
+    
+	<atom:link href="https://markpetherbridge.co.uk/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>An Elementary and Slightly Distilled Introduction to Blockchain</title>
+      <link>https://markpetherbridge.co.uk/blog/an-elementary-and-slightly-distilled-introduction-to-blockchain/</link>
+      <pubDate>Mon, 09 Sep 2019 11:13:25 +0900</pubDate>
+      
+      <guid>https://markpetherbridge.co.uk/blog/an-elementary-and-slightly-distilled-introduction-to-blockchain/</guid>
+      <description>Blockchain, you have heard of it right? It&amp;rsquo;s the one that is more notably recognised as being synonymously linked to cryptocurrencies such as Bitcoin. Its popularity boomed towards the end of 2017 when the first Bitcoin peaked at its all-time high price of around $20k. Some people became very rich indeed and this spurred on the outburst of blockchain development companies, apps, games, online communities, whale investors and of course media coverage.</description>
+    </item>
+    
+    <item>
+      <title>Using Javascript Settimeout() With Promises</title>
+      <link>https://markpetherbridge.co.uk/blog/javascript-using-settimeout-with-promises/</link>
+      <pubDate>Thu, 23 May 2019 11:48:29 +0900</pubDate>
+      
+      <guid>https://markpetherbridge.co.uk/blog/javascript-using-settimeout-with-promises/</guid>
+      <description>This article is intended to be a short and sweet.
+At work and for one of our projects we use Amazon Polly and I was assigned a JIRA ticket today to handle an error with the call to the API. At some point our application has grown bigger than originally expected and we are now getting the following error: ThrottlingException: Rate exceeded.
+I feel that I must also point out that this is a great example of bad planning and as a developer you should always plan and build your applications with scalability in mind.</description>
+    </item>
+    
+    <item>
+      <title>How to Increase Upload Limit for All in One Wp Migration Plugin</title>
+      <link>https://markpetherbridge.co.uk/blog/how-to-increase-upload-limit-for-all-in-one-wp-migration-plugin/</link>
+      <pubDate>Sun, 03 Feb 2019 12:03:57 +0900</pubDate>
+      
+      <guid>https://markpetherbridge.co.uk/blog/how-to-increase-upload-limit-for-all-in-one-wp-migration-plugin/</guid>
+      <description>Sometimes you need to do some work quickly, and a manual WordPress migration is not known for being easy. This is where plugins like All-in-One WP Migration come in handy. However, at the moment there is a very small upload limit and if you are not in a position to pay for the upgrade or just don&amp;rsquo;t have the time there is a very quick hack you can do to increase the limit.</description>
+    </item>
+    
+  </channel>
+</rss>

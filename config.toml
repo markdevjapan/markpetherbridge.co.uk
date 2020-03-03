@@ -1,0 +1,34 @@
+baseURL = "https://markpetherbridge.co.uk"
+languageCode = "en-us"
+title = "Mark Petherbridge"
+theme = "hugo-vitae"
+paginate = 5
+copyright = "Developing with <i class='fas fa-heart'></i> in Japan"
+publishDir = "docs"
+
+# Nav.
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+
+[[params.social]]
+name = "LinkedIn"
+icon = "fab fa-linkedin-in"
+url = "https://www.linkedin.com/in/mark-petherbridge/"
+
+[[params.social]]
+name = "Github"
+icon = "fab fa-github"
+url = "https://github.com/markdevjapan"
+
+pygmentsstyle = "colorful"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+googleAnalytics = "UA-132939460-1"
+
+[params]
+    subtitle = "A bit of everything"
+    avatar = "/img/mark-petherbridge-avatar.png"

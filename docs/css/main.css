@@ -289,6 +289,10 @@ ul {
     margin-bottom: 45px;
 }
 
+.gac {
+    text-align: center;
+}
+
 .post-header {
     display: flex;
 }

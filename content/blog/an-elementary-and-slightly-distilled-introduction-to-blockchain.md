@@ -105,6 +105,8 @@ Computers today are fast and are only getting faster which opens the possibility
 <h4 id="peer-to-peer">P2P (Peer to Peer) Network Consensus</h4>
 <p>The blockchain is made public and available to everyone, making it decentralised. When someone joins the blockchain they get a full copy of it in its current state. This is then referred to as a node. When a new block is created, any node connected to this chain will take the new block and then use PoW to verify that it is indeed secure. Each node will check the other nodes response to the new block. This means that if the block was tampered with and even if some nodes had tampered with blockchains, the new block would still be rejected as other nodes will notice the inconsistencies. This means that to anyone wanting to tamper with a block they would need to re-create the block, perform the Proof-of-Work for the entire block and take control of more than 50% of the network. This could be hundreds or thousands of people making it almost impossible to do.</p>
 
+{{% article_display_ads %}}
+
 <h2 id="what-problems-does-blockchain-solve">What problems does Blockchain solve?</h2>
 <p>It might not be clear what use this technology provides other than being able to digital time stamp documents securely but there are several real world use cases where blockchain technology really shines through. Here are a few examples:</p>
 

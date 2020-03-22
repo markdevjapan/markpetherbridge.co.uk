@@ -72,6 +72,10 @@ pre > code {
 	overflow: scroll;
 }
 
+code .comment {
+    color: #ccc;
+}
+
 a img {
     border:none;
 }
@@ -185,21 +189,18 @@ ul {
     display: inline;
 }
 
-.highlight pre {
-    margin-bottom: 0;
-    margin-top: 0;
-    padding: 20px;
-    background-color: transparent !important;
-}
-
-.highlight {
-    background: 0 0;
-    background-color: #FAFAFA;
-}
 
 .wrapper {
     max-width: 800px;
     margin: 0 auto;
+}
+
+.github-wrapper {
+    background-color: #f1f1f1;
+}
+
+.text-center {
+    text-align: center;
 }
 
 .container {

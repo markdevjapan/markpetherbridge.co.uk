@@ -6,11 +6,16 @@ paginate = 5
 copyright = "Developing with <i class='fas fa-heart'></i> in Japan"
 publishDir = "docs"
 
+
+
 # Nav.
 [[menu.main]]
 name = "Home"
 url = "/"
 weight = 1
+
+
+
 
 
 [[params.social]]
@@ -27,8 +32,13 @@ pygmentsstyle = "colorful"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
+
+
+githubUsername = "markdevjapan"
+
 googleAnalytics = "UA-132939460-1"
 
 [params]
     subtitle = "マーク・ペザーブリッジ"
     avatar = "/img/mark-petherbridge-avatar.png"
+    faviconUrl = "/img/favicon.ico"

@@ -1,10 +1,84 @@
----
-title: "Codility Challenge: My Binary Gap Positive Integer Solution (Python)    "
-date: 2020-03-17T10:35:16+09:00
-draft: false
-description: "My solution to the Codility Binary Gap (Positive Integer) task"
-githubRepo: "http://github.com"
----
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Codility Challenge: My Binary Gap Positive Integer Solution (Python)     - Mark Petherbridge</title><link rel="icon" type="image/png" href="/img/favicon.ico"/>
+
+
+	
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:title" content="Codility Challenge: My Binary Gap Positive Integer Solution (Python)    " />
+<meta property="og:description" content="My solution to the Codility Binary Gap (Positive Integer) task" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://markpetherbridge.co.uk/blog/codility-binary-gap-positive-integer-solution/" />
+<meta property="article:published_time" content="2020-03-17T10:35:16+09:00" />
+<meta property="article:modified_time" content="2020-03-17T10:35:16+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Codility Challenge: My Binary Gap Positive Integer Solution (Python)    "/>
+<meta name="twitter:description" content="My solution to the Codility Binary Gap (Positive Integer) task"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://markpetherbridge.co.uk/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://markpetherbridge.co.uk/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://markpetherbridge.co.uk/css/all.css" />
+
+	<script data-ad-client="ca-pub-3522625753731125" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="https://markpetherbridge.co.uk">
+				<img src="/img/mark-petherbridge-avatar.png" alt="Mark Petherbridge" />
+			</a>
+		</div>
+	
+	
+		<h2 class="site-title">
+	
+
+	<a href="https://markpetherbridge.co.uk">Mark Petherbridge</a>
+	
+	</h2>
+	
+	<div class="site-description"><p>マーク・ペザーブリッジ</p><nav class="nav social">
+			<ul class="flat"><li class="li-social"><a href="https://www.linkedin.com/in/mark-petherbridge/" target="_blank"><i title="LinkedIn" class="icons fab fa-linkedin-in"></i></a></li><li class="li-social"><a href="https://github.com/markdevjapan" target="_blank"><i title="Github" class="icons fab fa-github"></i></a></li></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="author">
+				
+			</div>
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">17</span>
+							<span class="rest">Mar 2020</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title"><a href="https://markpetherbridge.co.uk/blog/codility-binary-gap-positive-integer-solution/">Codility Challenge: My Binary Gap Positive Integer Solution (Python)    </a></h1>
+				</div>
+			</div>
+			<div class="markdown">
+				
 
 <p>For fun, education and self development I like to get involved with open source projects and coding challenges online. One of the most well known is online code test platforms is <a href="https://www.codility.com/" target="_blank">Codility</a>. </p>
 
@@ -12,7 +86,7 @@ githubRepo: "http://github.com"
 
 <p>Especially in Japan. Many of the top recruiters of developers, like Rakuten will use Codility to test your ability to code efficient and scalable code.</p>
 
-### The task
+<h3 id="the-task">The task</h3>
 
 <p>* The following blockquote is directly taken from the <a href="https://app.codility.com/programmers/lessons/1-iterations/binary_gap/" target="_blank">Codility website</a>. Copyright remains exclusively to Codility. The use of the text here is for educational purposes only.</p>
 
@@ -44,7 +118,7 @@ githubRepo: "http://github.com"
 <p><span class="highlight">N</span> is an integer within the <span class="highlight">range [1..2,147,483,647]</span>.</p>
 </blockquote>
 
-### Smaller pieces are easier to digest
+<h3 id="smaller-pieces-are-easier-to-digest">Smaller pieces are easier to digest</h3>
 
 <p>Let's take the task and break it down into smaller pieces, I often find that by doing it this way helps me develop my applications as a well structured whole.</p>
 
@@ -60,7 +134,7 @@ githubRepo: "http://github.com"
 
 <p>Finally, we need to return the length of the largest group. In this example the largest group is <span class="highlight">GROUP 2</span> and the length to be returned is: <span class="highlight">4</span></p>
 
-### So how do we do that in Python?
+<h3 id="so-how-do-we-do-that-in-python">So how do we do that in Python?</h3>
 
 <p><strong>1. Convert the Integer (N) into it's binary representation counterpart</strong></p>
 <p>Python comes with some built in <a href="https://docs.python.org/3/library/functions.html" target="_blank">functions</a> and luckily one of these is <a href="https://docs.python.org/3/library/functions.html#bin" target="_blank">bin()</a>. This function takes an input of type <span class="highlight">Integer</span> and returns a binary string prefixed with <span class="highlight">0b</span>
@@ -76,7 +150,6 @@ githubRepo: "http://github.com"
 <p>Using the <a href="#smaller-pieces-are-easier-to-digest">above example</a> of converting text to binary, to achieve that here we would use something like:</p>
 <script src="https://gist.github.com/markdevjapan/41dd88001f59c8e6fbb2786f90a9db32.js"></script>
 <p>This will give us the result: <span class="highlight">111001000011010</span></p>
-
 
 <p><strong>2. Work out what the groups are and return the largest</strong></p>
 <p>Now we need to build the mechanism that will work out the groups of zeros as depicted <a href="#smaller-pieces-are-easier-to-digest">above</a>. Whenever you are faced with the task of defining a programs logic, it's best to use a <a href="https://en.wikibooks.org/wiki/Programming_Fundamentals/Flowcharts" target="_blank">flowchart</a>. A flowchart is a representation of the workflow of an application, an algorithm or process. </p>
@@ -149,7 +222,7 @@ bin_zero_counter = 0</code></pre>
 <pre><code>if br_highest < bin_zero_counter:
     br_highest = bin_zero_counter</code></pre>
 
-And that sums up the breakdown of the code.
+<p>And that sums up the breakdown of the code.</p>
 
 <p><strong>Completed code</strong></p>
 
@@ -160,3 +233,20 @@ And that sums up the breakdown of the code.
 <p>And when we run it in the Codility validator, we get the result of:</p>
 <figure class="text-center"><img src="/img/codility/binary-gap/binary-def-results.png" alt="Elementary Introduction to Blockchain" /></figure>
 <p class="text-center"><a href="https://app.codility.com/demo/results/trainingPZ7XR8-9WE/" target="_blank">View online result report</a></p>
+
+			</div>
+			<div class="tags">
+				
+				
+				
+				
+					
+				
+					
+				
+				
+			</div></div>
+	</div>
+	
+</body>
+</html>

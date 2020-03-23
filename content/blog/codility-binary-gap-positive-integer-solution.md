@@ -1,6 +1,6 @@
 ---
 title: "Codility Challenge: My Binary Gap Positive Integer Solution (Python)    "
-date: 2020-03-17T10:35:16+09:00
+date: 2020-03-23T10:35:16+09:00
 draft: false
 description: "My solution to the Codility Binary Gap (Positive Integer) task"
 githubRepo: "http://github.com"

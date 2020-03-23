@@ -8,9 +8,9 @@ githubRepo: "http://github.com"
 
 <p>For fun, education and self development I like to get involved with open source projects and coding challenges online. One of the most well known is online code test platforms is <a href="https://www.codility.com/" target="_blank">Codility</a>. </p>
 
-<figure class="text-center"><img src="/img/codility/codility-logo.png" alt="Elementary Introduction to Blockchain" /></figure>
+<figure class="text-center"><img src="/img/codility/codility-logo.png" alt="Codility Logo" /></figure>
 
-<p>Especially in Japan. Many of the top recruiters of developers, like Rakuten will use Codility to test your ability to code efficient and scalable code.</p>
+<p>Especially in Japan. Many of the top recruiters of developers, like Indeed, Google and Rakuten will use Codility and other testing platforms to test your ability to code efficient and scalable code.</p>
 
 ### The task
 
@@ -52,11 +52,11 @@ githubRepo: "http://github.com"
 <p>From the task, we are to return the maximal sequence of consecutive zeros from the result of an integer converted if there is at least a single <span class="highlight">0</span> after an instance of <span class="highlight">1</span> and before the next <span class="highlight">1</span>. Basically, we just need to count all the <span class="highlight">0</span> that fall between a <span class="highlight">1</span> and a <span class="highlight">1</span>. Each time this happens we say it is a new group, we then need to find the group with the highest amount of zeros in it.</p>
 <p>For example, If we take the number <span class="highlight">29210</span> do some <a href="https://indepth.dev/the-simple-math-behind-decimal-binary-conversion-algorithms/" target="_blank">simple and quick maths</a> we get the binary representation of: </p>
 
-<figure class="text-center"><img src="/img/codility/binary-gap/binary-rep-of-29210.png" alt="Elementary Introduction to Blockchain" /></figure>
+<figure class="text-center"><img src="/img/codility/binary-gap/binary-rep-of-29210.png" alt="Binary Representation" /></figure>
 
 <p>Next we need to create the groups of zeros that fall between a <span class="highlight">1</span> and <span class="highlight">1</span>. Using the above binary we can ascertain that there are 3 groups.</p>
 
-<figure class="text-center"><img src="/img/codility/binary-gap/binary-def-groups.png" alt="Elementary Introduction to Blockchain" /></figure>
+<figure class="text-center"><img src="/img/codility/binary-gap/binary-def-groups.png" alt="Binary Representation Groups" /></figure>
 
 <p>Finally, we need to return the length of the largest group. In this example the largest group is <span class="highlight">GROUP 2</span> and the length to be returned is: <span class="highlight">4</span></p>
 
@@ -158,5 +158,5 @@ And that sums up the breakdown of the code.
 <script src="https://gist.github.com/markdevjapan/b5109917b7c0cd807d2aa9d810e986b1.js"></script>
 
 <p>And when we run it in the Codility validator, we get the result of:</p>
-<figure class="text-center"><img src="/img/codility/binary-gap/binary-def-results.png" alt="Elementary Introduction to Blockchain" /></figure>
+<figure class="text-center"><img src="/img/codility/binary-gap/binary-def-results.png" alt="Challenge Results 100%" /></figure>
 <p class="text-center"><a href="https://app.codility.com/demo/results/trainingPZ7XR8-9WE/" target="_blank">View online result report</a></p>

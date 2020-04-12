@@ -6,7 +6,6 @@ description: "Do not fret. You can still install the Sublime Babel Plugin. "
 githubRepo: ""
 ---
 
-<blockquote>This is a quick article and more for a reference for myself really.</blockquote>
 
 I recently have been getting to grips with Reach Native as I am working on a new app project for a client. Like most "new to a framework" developers I first typed into Google "How to build a React Native App". Favoring videos I switched to Youtube and found a Net ninja special course. Yay.
 

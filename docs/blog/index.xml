@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Developing with &lt;i class=&#39;fas fa-heart&#39;&gt;&lt;/i&gt; in Japan</copyright>
-    <lastBuildDate>Mon, 23 Mar 2020 10:35:16 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 12 Apr 2020 16:13:03 +0900</lastBuildDate>
     
 	<atom:link href="https://markpetherbridge.co.uk/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to Install Elusive Sublime Babel VS Code plugin (3 steps)</title>
+      <link>https://markpetherbridge.co.uk/blog/how-to-install-sublime-babel/</link>
+      <pubDate>Sun, 12 Apr 2020 16:13:03 +0900</pubDate>
+      
+      <guid>https://markpetherbridge.co.uk/blog/how-to-install-sublime-babel/</guid>
+      <description>This is a quick article and more for a reference for myself really. I recently have been getting to grips with Reach Native as I am working on a new app project for a client. Like most &amp;ldquo;new to a framework&amp;rdquo; developers I first typed into Google &amp;ldquo;How to build a React Native App&amp;rdquo;. Favoring videos I switched to Youtube and found a Net ninja special course. Yay.
+However, like most media on the net, especially videos.</description>
+    </item>
     
     <item>
       <title>Codility Challenge: My Binary Gap Positive Integer Solution (Python)    </title>

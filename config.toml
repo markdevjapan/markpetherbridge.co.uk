@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "Mark Petherbridge"
 theme = "hugo-vitae"
 paginate = 5
-copyright = "Developing with <i class='fas fa-heart'></i> in Japan"
+copyright = "Developing with <i class='fas fa-heart'></i> and <i class='fas fa-mug-hot'></i> in Japan"
 publishDir = "docs"
 
 
@@ -34,7 +34,7 @@ pygmentscodefencesguesssyntax = true
 
 
 
-githubUsername = "markdevjapan"
+githubUsername = "markp131"
 
 googleAnalytics = "UA-132939460-1"
 

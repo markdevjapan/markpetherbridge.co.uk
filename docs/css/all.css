@@ -2706,6 +2706,10 @@ readers do not read off random characters that represent icons */
 .fa-mug-hot:before {
   content: "\f7b6"; }
 
+.fa-mug-hot {
+  color: #27ae60;
+}
+
 .fa-music:before {
   content: "\f001"; }
 

@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Developing with &lt;i class=&#39;fas fa-heart&#39;&gt;&lt;/i&gt; and &lt;i class=&#39;fas fa-mug-hot&#39;&gt;&lt;/i&gt; in Japan</copyright>
-    <lastBuildDate>Wed, 03 Jun 2020 10:49:04 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 12 Apr 2020 16:13:03 +0900</lastBuildDate>
     
 	<atom:link href="https://markpetherbridge.co.uk/blog/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>How to use (Handle/Consume) APIs in React Native</title>
-      <link>https://markpetherbridge.co.uk/blog/how-to-consume-api-react-native/</link>
-      <pubDate>Wed, 03 Jun 2020 10:49:04 +0900</pubDate>
-      
-      <guid>https://markpetherbridge.co.uk/blog/how-to-consume-api-react-native/</guid>
-      <description>link: https://medium.com/better-programming/handling-api-like-a-boss-in-react-native-364abd92dc3d</description>
-    </item>
     
     <item>
       <title>How to Install Elusive Sublime Babel VS Code plugin (3 steps)</title>

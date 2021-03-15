@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Using Javascript Settimeout() With Promises - Mark Petherbridge</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="/img/favicon.ico"/>
+	<meta name="google-site-verification" content="mclGAgRIVpLXta-bT9cQs-6RTjuSaTsEML001FiLG00" />
+
+	<meta property="og:title" content="Using Javascript Settimeout() With Promises" />
+<meta property="og:description" content="A commonly googled problem that people seem to encounter. I thought I&#39;d share my solution" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://markpetherbridge.co.uk/blog/javascript-using-settimeout-with-promises/" />
+<meta property="article:published_time" content="2019-05-23T11:48:29+09:00" />
+<meta property="article:modified_time" content="2019-05-23T11:48:29+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using Javascript Settimeout() With Promises"/>
+<meta name="twitter:description" content="A commonly googled problem that people seem to encounter. I thought I&#39;d share my solution"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://markpetherbridge.co.uk/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://markpetherbridge.co.uk/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://markpetherbridge.co.uk/css/all.css" />
+
+	<script data-ad-client="ca-pub-3522625753731125" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="https://markpetherbridge.co.uk">
+				<img src="/img/mark-petherbridge-avatar.png" alt="Mark Petherbridge" />
+			</a>
+		</div>
+	
+	
+		<h2 class="site-title">
+	
+
+	<a href="https://markpetherbridge.co.uk">Mark Petherbridge</a>
+	
+	</h2>
+	
+	<div class="site-description"><p>マーク・ペザーブリッジ</p><nav class="nav social">
+			<ul class="flat"><li class="li-social"><a href="https://www.linkedin.com/in/mark-petherbridge/" target="_blank"><i title="LinkedIn" class="icons fab fa-linkedin-in"></i></a></li><li class="li-social"><a href="https://github.com/markp131" target="_blank"><i title="Github" class="icons fab fa-github"></i></a></li></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="author">
+				
+			</div>
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">23</span>
+							<span class="rest">May 2019</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title"><a href="https://markpetherbridge.co.uk/blog/javascript-using-settimeout-with-promises/">Using Javascript Settimeout() With Promises</a></h1>
+				</div>
+			</div>
+			<div class="markdown">
+				<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->This article is intended to be a short and sweet.<!-- raw HTML omitted --></p>
+<p>At work and for one of our projects we use <!-- raw HTML omitted -->Amazon Polly<!-- raw HTML omitted --> and I was assigned a <!-- raw HTML omitted -->JIRA<!-- raw HTML omitted --> ticket today to handle an error with the call to the API. At some point our application has grown bigger than originally expected and we are now getting the following error: <!-- raw HTML omitted -->ThrottlingException: Rate exceeded<!-- raw HTML omitted -->.</p>
+<!-- raw HTML omitted -->
+<p>Anyway, I thought great! This is just a quick fix that will be resolved using <!-- raw HTML omitted -->setTimeout()<!-- raw HTML omitted --></p>
+<p>After some initial digging, I found the function that made the call to AWS Polly:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>In the above function there is a for loop which contains a call to another function:</p>
+<!-- raw HTML omitted -->
+<p>The only thing that is in that function is the <!-- raw HTML omitted -->AWS Polly SDK<!-- raw HTML omitted --> code so I will not list it all here. I wrapped that function call in a <!-- raw HTML omitted -->setTimeout()<!-- raw HTML omitted --> method with a 3 second timeout:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Job done, or so I thought. When I ran the code in a Terminal window I got the same Throttle Limit Exceeded message.</p>
+<p>After some further investigation I realised by oversight and the issue was even though we were adding the timeout, it only delayed each one by 5 seconds and then added the next one straight behind it. So after 5 seconds, they all ran in sequence again.</p>
+<p>[chained photo here]</p>
+<p>What I needed to do was break up the block of data that is been sent and then to send those in batches. When and only when the previous block was completed. We can check when all the items of the data have been resolved by using the <!-- raw HTML omitted -->Promise.all()<!-- raw HTML omitted --> method.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Inside my current promise <!-- raw HTML omitted -->return new Promise((resolve, reject) =&gt; { &hellip; }<!-- raw HTML omitted --> I created another function and added a function call:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->data (arr)<!-- raw HTML omitted --> is what is passed into the function wrapping this one and is an array of text to convert and output filenames. <!-- raw HTML omitted -->30 (size)<!-- raw HTML omitted --> is is the amount of requests we want to send each time. At the moment, the data contains around 500 array objects and it is this what is causing the issues. I just put 30 as a random low number but you might want to check what the rate limits are for whatever service you are using this for.</p>
+<p>Ok, now we want to &ldquo;chop&rdquo; up the array so that we have smaller sizes. For this I am going to use <!-- raw HTML omitted -->array slicing<!-- raw HTML omitted --> to take the required amount (30) off the array.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>This line of code does two things: 1) It makes takes 30 objects from the <!-- raw HTML omitted -->arr<!-- raw HTML omitted --> array and reassigns <!-- raw HTML omitted -->arr<!-- raw HTML omitted --> with those 30 items and 2) whatever is left is assigned to the <!-- raw HTML omitted -->remainder<!-- raw HTML omitted --> variable.</p>
+<p>I then created an empty array so I can add the generated promises:</p>
+<!-- raw HTML omitted -->
+<p>What I now needed was to loop through the 30 (the size variable) items that are left in the array and send them to the API function and return a promise. I created a <!-- raw HTML omitted -->for loop<!-- raw HTML omitted --> which would iterate through the array, send the data to the function and store the returned promise into the <!-- raw HTML omitted -->promises<!-- raw HTML omitted --> array using the <!-- raw HTML omitted -->array.push<!-- raw HTML omitted --> method:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>The <!-- raw HTML omitted -->successessfullyCompletedAmount++<!-- raw HTML omitted --> counter was already part of the code and I left that in just incase this is used somewhere else that I am not sure of yet.</p>
+<p>Now I can implement the <!-- raw HTML omitted -->Promise.all<!-- raw HTML omitted --> method as mentioned above which check if all the promises resolve from the promises array. I can then chain functionality onto that method using the <!-- raw HTML omitted -->.then()<!-- raw HTML omitted --> method which will trigger when it returns true.</p>
+<!-- raw HTML omitted -->
+<p>Below is the basic structure of the <!-- raw HTML omitted -->Promise.all()<!-- raw HTML omitted -->.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>The section of code that will go into the <!-- raw HTML omitted -->then()<!-- raw HTML omitted --> part will be where we check if we have anything else to process or if we can resolve it.</p>
+<p>Ok, so let&rsquo;s check if there is anything else in the remainder to process and if not, then we can complete. We do this with a simple &lt;span class=&quot;highlight&quot;if<!-- raw HTML omitted --> condition statement:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Now let&rsquo;s turn that if statement into an <!-- raw HTML omitted -->if-else<!-- raw HTML omitted --> one because if there is something left to work on then we need to make sure we process it and add it to the promises array and remove it from the remainder array. This is also where we will be using the <!-- raw HTML omitted -->setTimeout()<!-- raw HTML omitted --> method that I mi-used earlier:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>And there you have it. A short and sweet technique to split apart a call to an API that returns a promise into smaller calls each with their own promises, we then wait for all those sub promises to be completed and then we can resolve the main promise returned.</p>
+
+			</div>
+			<div class="tags">
+				
+				
+				
+				
+					
+				
+					
+				
+				
+			</div></div>
+	</div>
+	
+	 <div class="footer wrapper">
+	<nav class="nav">
+		<div class="footertext"> Developing with <!-- raw HTML omitted --><!-- raw HTML omitted --> and <!-- raw HTML omitted --><!-- raw HTML omitted --> in Japan </div>
+	</nav>
+</div>
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132939460-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132939460-1');
+</script>
+
+
+</body>
+</html>

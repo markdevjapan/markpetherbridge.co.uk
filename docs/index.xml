@@ -37,6 +37,15 @@ However, like most media on the net, especially videos. They often out-date very
           <description>Blockchain, you have heard of it right? It&amp;rsquo;s the one that is more notably recognised as being synonymously linked to cryptocurrencies such as Bitcoin. Its popularity boomed towards the end of 2017 when the first Bitcoin peaked at its all-time high price of around $20k. Some people became very rich indeed and this spurred on the outburst of blockchain development companies, apps, games, online communities, whale investors and of course media coverage.</description>
         </item>
         <item>
+          <title>Using Javascript Settimeout() With Promises</title>
+          <link>https://markpetherbridge.co.uk/blog/javascript-using-settimeout-with-promises/</link>
+          <pubDate>Thu, 23 May 2019 11:48:29 &#43;0900</pubDate>
+          
+          <guid>https://markpetherbridge.co.uk/blog/javascript-using-settimeout-with-promises/</guid>
+          <description>This article is intended to be a short and sweet.At work and for one of our projects we use Amazon Pollyand I was assigned a JIRAticket today to handle an error with the call to the API. At some point our application has grown bigger than originally expected and we are now getting the following error: ThrottlingException: Rate exceeded.
+Anyway, I thought great! This is just a quick fix that will be resolved using setTimeout()After some initial digging, I found the function that made the call to AWS Polly:</description>
+        </item>
+        <item>
           <title>How to Increase Upload Limit for All in One Wp Migration Plugin</title>
           <link>https://markpetherbridge.co.uk/blog/how-to-increase-upload-limit-for-all-in-one-wp-migration-plugin/</link>
           <pubDate>Sun, 03 Feb 2019 12:03:57 &#43;0900</pubDate>

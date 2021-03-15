@@ -75,40 +75,135 @@
 				</div>
 			</div>
 			<div class="markdown">
-				<!-- raw HTML omitted -->
+				<figure class="text-center"><img src="/img/an-elementary-and-slightly-distilled-introduction-to-blockchain/blockchain-og-image.png" alt="Elementary Introduction to Blockchain" /></figure>
 <p>Blockchain, you have heard of it right? It&rsquo;s the one that is more notably recognised as being synonymously linked to cryptocurrencies such as Bitcoin. Its popularity boomed towards the end of 2017 when the first Bitcoin peaked at its all-time high price of around $20k. Some people became very rich indeed and this spurred on the outburst of blockchain development companies, apps, games, online communities, whale investors and of course media coverage.</p>
-<p>Sadly though I often find that people associate Blockchain purely with cryptocurrencies and this is just not the case. <!-- raw HTML omitted -->Bitcoin is not the same as Blockchain.<!-- raw HTML omitted --> Blockchain as a technology is a complex and interesting paradigm that brings new and exciting possibilities to the future. I decided to write this article to clarify and share my knowledge.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>In order to add a new block to our blockchain we check that the new blocks previous hash matches the previous block. In our example it is: <!-- raw HTML omitted -->b4de b27c 02e8 bdbe 6beb 48c5 a943 d189<!-- raw HTML omitted -->. It is exactly the same and thus we know that nothing has been tampered with. This confirmation process verifies that all hashes are consistent back to the <!-- raw HTML omitted -->Genesis Block<!-- raw HTML omitted -->.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<p>Sadly though I often find that people associate Blockchain purely with cryptocurrencies and this is just not the case. <strong>Bitcoin is not the same as Blockchain.</strong> Blockchain as a technology is a complex and interesting paradigm that brings new and exciting possibilities to the future. I decided to write this article to clarify and share my knowledge.</p>
+<h4>This article covers the following:</h4>
+<ul>
+	<li><a href="#a-brief-history-of-blockchain">A brief history of blockchain</a>
+		<ul><li><a href="#what-is-a-hash">What is a hash?</a></li><li><a href="#banksy-of-blockchain">The Banksy of Blockchain</a></li></ul>
+	</li>
+	<li> <a href="#what-is-blockchain">What is a blockchain?</a>
+		<ul>
+			<li><a href="#blockchain-block-data">The Block Data</a></li>
+			<li><a href="#blockchain-block-hash">The Block Hash</a></li>
+			<li><a href="#blockchain-block-previous-hash">Previous Block Hash</a></li>
+			<li><a href="#genesis-block">Genesis Block</a></li>
+		</ul>
+	</li>
+	<li> <a href="#how-is-blockchain-secure">How is a blockchain secure?</a>
+		<ul>
+			<li><a href="#merkle-tree-methodology">Merkle Tree Methodology</a></li>
+			<li><a href="#proof-of-work">Proof of Work</a></li>
+			<li><a href="#peer-to-peer">P2P (Peer to Peer) Network Consensus</a></li>
+		</ul>
+	</li>
+	<li><a href="#what-problems-does-blockchain-solve">What problems does Blockchain solve?</a>
+		<ul>
+			<li><a href="#currency-transations">Currency and Transactions</a></li>
+			<li><a href="#crowdfunding">Crowdfunding</a></li>
+			<li><a href="#cloud-storage">Cloud Storage</a></li>
+			<li><a href="#voting">Voting</a></li>
+		</ul>
+	</li>
+	<li><a href="#future-of-blockchain">The Future of Blockchain</a></li>
+	<li><a href="#references">References</a></li>
+</ul>
+<h2 id="a-brief-history-of-blockchain">A brief history of blockchain</h2>
+The idea of blockchains was first conceived in 1991 by Stuart Haber and W. Scott Stornetta in their paper titled: "How to time-stamp a digital document" [<a href="#references">1</a>]. They wanted to implement a system by which digital documents could be timestamped securely. This would make it impossible to backdate them or tamper with them. In 2012, joined by Dave Bayer, Haber and Stornetta incorporated a cryptographic hash tree known as a Merkle Tree into the design to improve efficiency (Allowing several documents to be collected together in a single 'block') and security (Storing relational hashes in blocks) [<a href="#references">2</a>]:
+<blockquote>A Merkle tree is recursively defined as a binary tree of hash lists where the parent node is the hash of its children, and the leaf nodes are hashes of the original data blocks. [<a href="#references">3</a>], thus creating </blockquote>
+<h4 id="what-is-a-hash">What is a hash?</h4>
+<p>Succinctly, a "hash" is the result of a cryptographic formula that has taken some form of data, encrypted it and returned the result as a single string of characters (numbers and/or letters).</p>
+<h4 id="banksy-of-blockchain">The Banksy of Blockchain</h4>
+Satoshi Nakamoto is the author of the official Bitcoin Whitepaper (Bitcoin: A Peer-to-Peer Electronic Cash System) [<a href="#references">4</a>] and is the one who created and deployed bitcoin's original reference implementation. To this day Nakamoto remains an unknown identity like the elusive street artist Banksy. [<a href="#references">5</a>].
+<h2 id="what-is-blockchain">What is a blockchain?</h2>
+A blockchain is a Distributed Ledger often referred to as DLT (Distributed Ledger Technology) which is accessible to everyone meaning it is Decentralized. Once data is stored within a block it becomes extremely difficult to change it. To explain this further, let's take a closer look at a single block.
+<figure class="text-center"><img src="/img/an-elementary-and-slightly-distilled-introduction-to-blockchain/blockchain-blocks-single.png" alt="Single Blockchain Block" /></figure>
+In the representation above of a single block within a blockchain you can see that a block is comprised of three things; Data, a Hash, and the Hash of the previous block.
+<h4 id="blockchain-block-data">The Block Data</h4>
+The data in a blockchain all depends on what type of blockchain there is (yes there are different types of blockchain, and not to send you down a rabbit hole but there is also something called the Tangle which is a form of DAG Technology (Directed acyclic graph)  [<a href="#references">6</a>])
+<blockquote>On a side note about the Tangle. IOTA - the cryptocurrency that utilises the Tangle is one that I am very 'Bullish' on as I think it is a revolutionary and forward thinking approach to M2M (Machine to Machine) transactions and the entire future of the M2M economy. I wrote a quick and easy to follow <a href="https://howtobuyiota.co.uk" target="_blank">How to buy IOTA</a> guide if you are interested.</blockquote>
+<p>Before we get too sidetracked let's get back to Blockchain data. So, let's assume we have the Bitcoin Blockchain. The data that is stored in there will be The Sender, The Receiver and The Amount</p>
+<figure class="text-center"><img src="/img/an-elementary-and-slightly-distilled-introduction-to-blockchain/blockchain-block-data.png" alt="Blockchain Single Bitcoin Block" /></figure>
+<h4 id="blockchain-block-hash">The Block Hash</h4>
+The block will also contain a Hash. The Bitcoin blockchain uses the SHA-256 Hash Algorithm [<a href="#references">7</a>]. When the block is created, the data is taken and the hash is calculated from that Data. This process is called cryptography. Because the hash will be unique to the block and the data inside, it can be treated as and is often referred to as a "digital fingerprint".
+<figure class="text-center"><img src="/img/an-elementary-and-slightly-distilled-introduction-to-blockchain/blockchain-bitcoin-hash.png" alt="Bitcoin Blockchain Hash Example" /></figure>
+<h4 id="blockchain-block-previous-hash">Previous Block Hash</h4>
+The block also contains the hash of the previous block and it is this which creates the chain. It is also this which is integral to the security of the blockchain.
+<figure class="text-center"><img src="/img/an-elementary-and-slightly-distilled-introduction-to-blockchain/blockchain-bitcoin-previous-hash.png" alt="Bitcoin Blockchain Previous Hash Example" /></figure>
+<h4 id="genesis-block">Genesis Block</h4>
+Some of you might have just figured out that the previous hash cannot infinitely go backwards as there must be a starting point and you're right. Block 0 or sometimes called block 1 is known as the Genesis Block.
+<blockquote>A genesis block is the first block of a block chain. Modern versions of Bitcoin number it as block 0, though very early versions counted it as block 1. The genesis block is almost always hardcoded into the software of the applications that utilize its block chain. It is a special case in that it does not reference a previous block, and for Bitcoin and almost all of its derivatives, it produces an un-spendable subsidy. [<a href="#references">8</a>]</blockquote>
+<h2>How is a blockchain secure?</h2>
+The blockchain utilises 3 techniques for its security: Merkle Tree Hash Methodology, Proof of Work, P2P (Peer to Peer) Network.
+<h4 id="merkle-tree-methodology">Merkle Tree Methodology</h4>
+<p>As I mentioned above in <a href="#a-brief-history-of-blockchain">A brief history of blockchain</a>, back in 2012 the Merkle Tree Cryptographic Hash Methodology was implemented into the design for blockchain which improves not just the efficiency but the security too. The implementation of Merkle trees allow for a deterministic and waterfall style method of block creation. Each block will be assigned a hash of its data and each new block from that block will be a copy of the parent blocks hash.</p>
+<figure class="text-center"><img src="/img/an-elementary-and-slightly-distilled-introduction-to-blockchain/merkle-hash-tree.png" alt="Merkle Tree Hash Diagram" /><figcaption>An example of a binary hash tree. Hashes 0-0 and 0-1 are the hash values of data blocks L1 and L2, respectively, and hash 0 is the hash of the concatenation of hashes 0-0 and 0-1. [<a href="#references">9</a>]</figcaption></figure>
+<p>To explain this a little more clearly in the context of Bitcoin lets delve into an example. The illustration below shows an example transaction between Susan Bloggs and Chris Bloggs. Susan has sent 3.456BTC (Bitcoin) to Chris. This transaction creates a new block on the chain with the data of the transaction, the hash of that data and the hash from the initial block.</p>
+<figure class="text-center"><img src="/img/an-elementary-and-slightly-distilled-introduction-to-blockchain/blockchain-send-and-receive.png" alt="Blockchain Send and Receive" /></figure>
+So the data we are encrypting is: <span class="highlight">The Sender: Susan Bloggs</span>, <span class="highlight">The Receiver: Chris Bloggs</span> and <span class="highlight">The Amount: 3.456BTC</span>. Using our hashing function we get the hash: <span class="highlight">b4de b27c 02e8 bdbe 6beb 48c5 a943 d189</span>. We then add this hash to our block.
+<p>In order to add a new block to our blockchain we check that the new blocks previous hash matches the previous block. In our example it is: <span class="highlight">b4de b27c 02e8 bdbe 6beb 48c5 a943 d189</span>. It is exactly the same and thus we know that nothing has been tampered with. This confirmation process verifies that all hashes are consistent back to the <a href="#genesis-block">Genesis Block</a>.</p>
+<h4 id="proof-of-work">Proof of Work</h4>
+Computers today are fast and are only getting faster which opens the possibility that someone could create a new block and re-calculate all previous block hashes and get around this security feature. To Mitigate this, blockchain also utilises something called (PoW) Proof-of-Work. PoW effectively slows down the creation of new blocks. In a Bitcoin example each block would take around 10-15 mins to calculate the required PoW and add a new block to the existing chain. So if you were to tamper with the chain you would need to recalculate potentially hundreds of thousands of blocks.
+<blockquote>A proof of work is a piece of data which is difficult (costly, time-consuming) to produce but easy for others to verify and which satisfies certain requirements. Producing a proof of work can be a random process with low probability so that a lot of trial and error is required on average before a valid proof of work is generated. [<a href="#references">10</a>] Bitcoin uses the hashcash PoW [<a href="#references">11</a>] function as the mining core.</blockquote>
+<h4 id="peer-to-peer">P2P (Peer to Peer) Network Consensus</h4>
+<p>The blockchain is made public and available to everyone, making it decentralised. When someone joins the blockchain they get a full copy of it in its current state. This is then referred to as a node. When a new block is created, any node connected to this chain will take the new block and then use PoW to verify that it is indeed secure. Each node will check the other nodes response to the new block. This means that if the block was tampered with and even if some nodes had tampered with blockchains, the new block would still be rejected as other nodes will notice the inconsistencies. This means that to anyone wanting to tamper with a block they would need to re-create the block, perform the Proof-of-Work for the entire block and take control of more than 50% of the network. This could be hundreds or thousands of people making it almost impossible to do.</p>
+<div class="row gac">
+    <div class="container_fluid mt-3 mb-3 ">
+        <p><small>advertisement</small></p>
+    </div>
+    <div class="container_fluid">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+            style="display:block; text-align:center;"
+            data-ad-layout="in-article"
+            data-ad-format="fluid"
+            data-ad-client="ca-pub-3522625753731125"
+            data-ad-slot="2871184424"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</div>
+<h2 id="what-problems-does-blockchain-solve">What problems does Blockchain solve?</h2>
+<p>It might not be clear what use this technology provides other than being able to digital time stamp documents securely but there are several real world use cases where blockchain technology really shines through. Here are a few examples:</p>
+<h4 id="currency-transations">Currency and Transactions</h4>
+<p>When you transfer money at the moment, whether that be for your personal use or business use and whether that is to a friend in the same country or any entity overseas, you need to use a third party service such as a Bank or Paypal or another money transfer system like MoneyGram. They do it well, its secure and traceable. So what is bad about them? Like anything where you need to use an intermediary, you incur charges and unfortunately due to our current systems those fees are usually pretty hefty and can take several days or even weeks to transfer. Usually these services also require both parties to be a heavily verified individual which restricts payments to those who are unable to get access to a bank account.</p>
+<p>There is also the huge issue of personal data which we are constantly seeing in the media that entities have been hacked and documents/information/data have been leaked or sold. Blockchain is decentralised by design and removes the need to trust a third party. Transactions also can be almost instant depending on the type of blockchain. Bitcoin takes a few hours, IOTA is within seconds (and zero fees).</p>
+<p>This does not just appeal to the individual, In 2018 ConsenSys revealed there new project called:  Project i2i -  a payment network built on Ethereum to connect rural community banks in the Philippines. [<a href="#references">12</a>]</p>
+<blockquote>
+At this stage, Project i2i represents a simpler implementation of a complex system, which many in the industry refer to as crypto-cash: crypto-tokens backed by fiat currency. The concept of backing fiat currency with tokens has been explored and developed by multiple financial institutions and regulators around the world, such as the Utility Settlement Coin consortium led by UBS and Project Ubin of the Monetary Authority of Singapore. [<a href="#references">13</a>]
+</blockquote>
+<h4 id="crowdfunding">Crowdfunding</h4>
+Ethereum, with its development of Crowdsale[<a href="#references">14</a>] and Smart Contracts has allowed start ups to raise substantial amounts in a matter of a few hours. By substantial I am talking into the millions. Filecoin, an open source decentralised market for storage raised $257,000,000 [<a href="#references">15</a>].
 <p>Which brings us to our next benefit of blockchain.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-
+<h4 id="cloud-storage">Cloud Storage</h4>
+<p>In addition to Filecoin mentioned just above there is also a Storj.io (based on the blockchain technology and a peer-to-peer architecture, it intends to provide cloud storage to people). Both these solutions remove the worst thing (in my opinion) about cloud computing and that is that the current solutions such as Amazon, Google, Dropbox etc.. is that they are owned by single entities and with that comes the rules and requirements by those entities. Blockchain storage solutions allow you to have full control of your data and make sure that you are the only one who can access it.</p>
+<h4 id="voting">Voting</h4>
+<p>Using blockchain for votings will eliminate the possibility of fraud and help boost turnout. Mobile voting using a secure method will allow people to vote whilst abroad. It will be a beneficial tool for the election commission to maintain transparency in the electoral process, minimize the cost of conducting elections, streamline the process of counting votes and ensure that all votes are counted. </p>
+<h2 id="future-of-blockchain">The Future of Blockchain</h2>
+<p>Blockchain technology is still in its infancy and is not currently adopted en masse. We are also still in the era of the Bitcoin equals Blockchain association and not until blockchain branches itself away and matures and becomes known for being its own technology and not just cryptocurrencies will we see the true value of this technology. The impact and disruption of distributed ledger technologies may be greater than we realise today - it has the potential to change economics, business and society.</p>
+<p>I am extremely excited to be apart of the decentralised revolution and I feel we’re just beginning to scratch the surface of what’s possible.</p>
+<p>I am going to be voyaging more into the deep space of blockchain technology and look into experimenting with the AWS Blockchain as a Service  [<a href="#references">16</a>]. I will be creating a tutorial soon about how to create a Smart Contract with Javascript (and potentially other languages) and looking into applications and games that could be built upon IOTA's Tangle. I will continue to share my experiences and results.</p>
+<h3 id="references">References</h3>
+<ol>
+ 	<li>How to Time Stamp Digital Documents (<a href="https://link.springer.com/article/10.1007%2FBF00196791" target="_blank" >https://link.springer.com/article/10.1007%2FBF00196791</a>)</li>
+<li>Improving the Efficiency and Reliability of Digital Time-Stamping (<a href="https://link.springer.com/chapter/10.1007/978-1-4613-9323-8_24"  target="_blank">https://link.springer.com/chapter/10.1007/978-1-4613-9323-8_24</a>)</li>
+<li>Merkle Trees (<a href="https://en.wikipedia.org/wiki/Merkle_tree" target="_blank">https://en.wikipedia.org/wiki/Merkle_tree</a>)</li>
+<li>Bitcoin Whitepaper (<a href="https://bitcoin.org/bitcoin.pdf" target="_blank">https://bitcoin.org/bitcoin.pdf</a>)</a>
+<li>Banksy (<a href="https://en.wikipedia.org/wiki/Banksy" target="_blank">https://en.wikipedia.org/wiki/Banksy</a>)</li>
+<li>DAG Technology (<a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph" target="_blank">https://en.wikipedia.org/wiki/Directed_acyclic_graph</a>)</li>
+<li>How does blockchain work in 7 steps (<a href="https://medium.com/coinmonks/blockchain-for-beginners-what-is-blockchain-519db8c6677a" target="_blank">https://medium.com/coinmonks/blockchain-for-beginners-what-is-blockchain-519db8c6677a</a>)</li>
+<li>Genesis Block (<a href="https://en.bitcoin.it/wiki/Genesis_block" target="_blank">https://en.bitcoin.it/wiki/Genesis_block</a>)</li>
+<li>An example of a binary hash tree (<a href="https://en.wikipedia.org/wiki/Merkle_tree#/media/File:Hash_Tree.svg" target="_blank">https://en.wikipedia.org/wiki/Merkle_tree#/media/File:Hash_Tree.svg</a>)</li>
+<li>Bitcoin Proof of Work (<a href="https://en.bitcoin.it/wiki/Proof_of_work" target="_blank">https://en.bitcoin.it/wiki/Proof_of_work</a>)</li>
+<li>Hashcash (<a href="https://en.bitcoin.it/wiki/Hashcash" target="_blank">https://en.bitcoin.it/wiki/Hashcash</a>)</li>
+<li>Project i2i: An Ethereum Payment Network Driving Financial Inclusion in the Philippines (<a href="https://media.consensys.net/project-i2i-an-ethereum-payment-network-driving-financial-inclusion-in-the-philippines-233e5eda135e" target="_blank">https://media.consensys.net/project-i2i-an-ethereum-payment-network-driving-financial-inclusion-in-the-philippines-233e5eda135e</a>)</li>
+<li>Project Ubin: Central Bank Digital Money using Distributed Ledger Technology (<a href="http://www.mas.gov.sg/Singapore-Financial-Centre/Smart-Financial-Centre/Project-Ubin.aspx" target="_blank">http://www.mas.gov.sg/Singapore-Financial-Centre/Smart-Financial-Centre/Project-Ubin.aspx</a>)</li>
+<li>CROWDSALE - Raising funds from friends without a third party (<a href="https://www.ethereum.org/crowdsale" target="_blank">https://www.ethereum.org/crowdsale</a>)</li>
+<li>$257 Million: Filecoin Breaks All-Time Record for ICO Funding (<a href="https://www.coindesk.com/257-million-filecoin-breaks-time-record-ico-funding" target="_blank">https://www.coindesk.com/257-million-filecoin-breaks-time-record-ico-funding</a>)</li>
+<li>AWS Blockchain as a service (<a href="https://aws.amazon.com/blockchain/" target="_blank">https://aws.amazon.com/blockchain/</a>)</li>
+</ol>
 			</div>
 			<div class="tags">
 				
@@ -125,7 +220,7 @@
 	
 	 <div class="footer wrapper">
 	<nav class="nav">
-		<div class="footertext"> Developing with <!-- raw HTML omitted --><!-- raw HTML omitted --> and <!-- raw HTML omitted --><!-- raw HTML omitted --> in Japan </div>
+		<div class="footertext"> Developing with <i class='fas fa-heart'></i> and <i class='fas fa-mug-hot'></i> in Japan </div>
 	</nav>
 </div>
 

@@ -28,6 +28,9 @@ name = "Github"
 icon = "fab fa-github"
 url = "https://github.com/markp131"
 
+[markup.goldmark.renderer]
+unsafe= true
+
 pygmentsstyle = "colorful"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true

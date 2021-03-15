@@ -26,7 +26,8 @@ However, like most media on the net, especially videos. They often out-date very
           <pubDate>Mon, 23 Mar 2020 10:35:16 &#43;0900</pubDate>
           
           <guid>https://markpetherbridge.co.uk/blog/codility-binary-gap-positive-integer-solution/</guid>
-          <description>The task Smaller pieces are easier to digest So how do we do that in Python? And that sums up the breakdown of the code.</description>
+          <description>For fun, education and self development I like to get involved with open source projects and coding challenges online. One of the most well known is online code test platforms is Codility.  Especially in Japan. Many of the top recruiters of developers, like Indeed, Google and Rakuten will use Codility and other testing platforms to test your ability to code efficient and scalable code.
+The task * The following blockquote is directly taken from the Codility website.</description>
         </item>
         <item>
           <title>An Elementary and Slightly Distilled Introduction to Blockchain</title>
@@ -42,8 +43,9 @@ However, like most media on the net, especially videos. They often out-date very
           <pubDate>Thu, 23 May 2019 11:48:29 &#43;0900</pubDate>
           
           <guid>https://markpetherbridge.co.uk/blog/javascript-using-settimeout-with-promises/</guid>
-          <description>This article is intended to be a short and sweet.At work and for one of our projects we use Amazon Pollyand I was assigned a JIRAticket today to handle an error with the call to the API. At some point our application has grown bigger than originally expected and we are now getting the following error: ThrottlingException: Rate exceeded.
-Anyway, I thought great! This is just a quick fix that will be resolved using setTimeout()After some initial digging, I found the function that made the call to AWS Polly:</description>
+          <description>This article is intended to be a short and sweet.
+At work and for one of our projects we use Amazon Polly and I was assigned a JIRA ticket today to handle an error with the call to the API. At some point our application has grown bigger than originally expected and we are now getting the following error: ThrottlingException: Rate exceeded.
+I feel that I must also point out that this is a great example of bad planning and as a developer you should always plan and build your applications with scalability in mind.</description>
         </item>
         <item>
           <title>How to Increase Upload Limit for All in One Wp Migration Plugin</title>
@@ -51,7 +53,7 @@ Anyway, I thought great! This is just a quick fix that will be resolved using se
           <pubDate>Sun, 03 Feb 2019 12:03:57 &#43;0900</pubDate>
           
           <guid>https://markpetherbridge.co.uk/blog/how-to-increase-upload-limit-for-all-in-one-wp-migration-plugin/</guid>
-          <description>Sometimes you need to do some work quickly, and a manual WordPress migration is not known for being easy. This is where plugins like All-in-One WP Migrationcome in handy. However, at the moment there is a very small upload limit and if you are not in a position to pay for the upgrade or just don&amp;rsquo;t have the time there is a very quick hack you can do to increase the limit.</description>
+          <description>Sometimes you need to do some work quickly, and a manual WordPress migration is not known for being easy. This is where plugins like All-in-One WP Migration come in handy. However, at the moment there is a very small upload limit and if you are not in a position to pay for the upgrade or just don&amp;rsquo;t have the time there is a very quick hack you can do to increase the limit.</description>
         </item>
         
   </channel>
